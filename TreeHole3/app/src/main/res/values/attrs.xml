@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--侧边栏-->
+    <declare-styleable name="SlidingMenu">
+        <attr name="rightPadding" format="dimension"></attr>
+    </declare-styleable>
+    <!--下拉刷新-->
+    <declare-styleable name="PullListView">
+        <attr name="getMoreType">
+            <enum name="auto" value="0" />
+            <enum name="click" value="1" />
+        </attr>
+        <attr name="addPullHeaderByUser" format="boolean" />
+    </declare-styleable>
+</resources>

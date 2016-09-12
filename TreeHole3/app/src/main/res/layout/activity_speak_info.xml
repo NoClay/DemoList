@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/orangeRed">
+
+        <ImageView
+            android:id="@+id/return_last_activity_button"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_height="40dp"
+            android:src="@drawable/return_last_activity" />
+
+        <TextView
+            android:id="@+id/speakId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="吐槽 1456222"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <include layout="@layout/load_layout_to_use"></include>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/tree_hole_item_for_my_speak"></include>
+                </LinearLayout>
+
+                <noclay.treehole3.ListViewPackage.ListViewInScrollView
+                    android:id="@+id/fragment_list_view_for_speak_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </noclay.treehole3.ListViewPackage.ListViewInScrollView>
+                <TextView
+                    android:gravity="center"
+                    android:textColor="@color/textGray"
+                    android:text="已无更多评论..."
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <View
+        android:layout_marginTop="-51dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightGray">
+    </View>
+
+    <RelativeLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:singleLine="true"
+            android:maxLines="1"
+            android:maxEms="100"
+            android:paddingLeft="5dp"
+            android:id="@+id/commentEditText"
+            android:textColorHint="@color/textGray"
+            android:textColor="@color/textGray"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="50dp"
+            android:hint="说点什么吧..."></EditText>
+
+        <ImageButton
+            android:id="@+id/sendCommentButton"
+            android:scaleType="centerInside"
+            android:src="@drawable/add1"
+            android:background="@null"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--搜索与我相关的表白-->
+    <include layout="@layout/search_button"></include>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <noclay.treehole3.ListViewPackage.PullListView
+            android:divider="@null"
+            app:getMoreType="auto"
+            android:id="@+id/fragment_list_view_for_left_love"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </noclay.treehole3.ListViewPackage.PullListView>
+        <ImageButton
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:id="@+id/return_home_button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/return_home"
+            android:background="@drawable/fab"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <include layout="@layout/load_layout_to_use"></include>
+
+    </RelativeLayout>
+
+</LinearLayout>

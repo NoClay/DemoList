@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/backgroundColor"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:background="@color/lightWhite"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/skyBlue"
+            android:id="@+id/left_love"
+            android:gravity="center"
+            android:text="表白墙"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <View
+            android:background="@color/lightGray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent">
+
+        </View>
+        <TextView
+            android:textColor="@color/lightGray"
+            android:id="@+id/right_love"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="助力排行榜"
+            android:background="@color/lightWhite"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <View
+        android:background="@color/lightGray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
+    <FrameLayout
+        android:id="@+id/love_wall_view_pager"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants"
+
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/comment_author_name"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/orangeRed"
+            android:text="好的"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/comment_author_order"
+            android:textColor="@color/textGray"
+            android:text="1楼"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/comment_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/textGray"
+        android:text="好逗啊的卡快点放假啦df"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

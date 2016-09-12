@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/orangeRed">
+
+        <ImageView
+            android:id="@+id/cancel_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/return_last_activity" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <!--主要的搜索框-->
+    <LinearLayout
+        android:id="@+id/main_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Xiu love"
+            android:textColor="@color/orangeRed"
+            android:textSize="31sp" />
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/radius_rectangle_for_text"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <AutoCompleteTextView
+                android:id="@+id/search_key_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="7"
+                android:background="@null"
+                android:hint="请输入关键词"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/textGray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/search_start_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/radio_rectangle_for_text_right"
+                android:gravity="center"
+                android:text="Xiu一下"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:text="选择来源:"
+                android:textColor="@color/textGray"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="被表白者"
+                android:textColor="@color/orangeRed" />
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="表白发布者"
+                android:textColor="@color/orangeRed" />
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="表白内容包含"
+                android:textColor="@color/orangeRed" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_result_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/search_result_show_in_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical|left"
+            android:textColor="@color/textGray"
+            android:textSize="20sp" />
+        <RelativeLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <noclay.treehole3.ListViewPackage.PullListView
+                android:id="@+id/search_result_show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </noclay.treehole3.ListViewPackage.PullListView>
+
+            <ImageButton
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:id="@+id/return_home_button"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/return_home"
+                android:background="@drawable/fab"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+            <include layout="@layout/load_layout_to_use"></include>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+
+    android:background="@color/backgroundColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/radius_rectangle"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <noclay.treehole3.OtherPackage.MyCircleImageView
+                android:id="@+id/user_head_image"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/man" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/hot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:text="热门"
+                    android:textColor="@color/textGray"
+                    android:textSize="13sp"></TextView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/user_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/darkGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:textColor="@color/textGray"
+                android:layout_alignParentLeft="true"
+                android:gravity="left|center_vertical"
+                android:id="@+id/admire_show"
+                android:text="点赞 14544"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:textColor="@color/textGray"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical|left"
+                android:id="@+id/shared_show"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/toolBarForSpeak"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+                    <RadioButton
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/like_button"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/my_radiobutton_drawable_for_like"
+                        android:button="@null"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp" />
+                    <RadioButton
+                        android:id="@+id/dislike_button"
+                        android:background="@drawable/my_radiobutton_drawable_for_dislike"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:button="@null"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent" />
+                </RadioGroup>
+                <ImageButton
+                    android:id="@+id/speak_comment_button"
+                    android:background="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/my_comment_button_drawable"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+            <ImageButton
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/share_button"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/share"
+                android:layout_width="40dp"
+                android:layout_height="27dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

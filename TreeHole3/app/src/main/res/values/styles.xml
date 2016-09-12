@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/orangeRed</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--自定义的点赞按钮-->
+    <style name="MyCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/my_checkbox_drawable</item>
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:maxHeight">10.0dip</item>
+    </style>
+    <!--自定义的匿名-->
+    <style name="MyCheckBoxForAnyOne" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/my_checkbox_drawable_for_anyone</item>
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:maxHeight">10.0dip</item>
+    </style>
+    <!--自定义的点赞按钮，爱心样式-->
+    <style name="MyCheckBoxForLove" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/my_checkbox_drawable_for_love</item>
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:maxHeight">10.0dip</item>
+    </style>
+    <!-- 选择照片底部弹出层 -->
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="Theme.Start" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/app_start</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

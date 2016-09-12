@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/user_image_show"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/man" />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp">
+            <TextView
+                android:id="@+id/user_name_show"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="17.5dp" />
+            <CheckBox
+                android:id="@+id/user_is_none"
+                android:textColor="@color/textGray"
+                style="@style/MyCheckBoxForAnyOne"
+                android:text="匿名"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/post_speak_button"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:src="@drawable/add1"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/content_edit_text"
+        android:gravity="top"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/textGray"
+        android:hint="@string/stringForSpeak"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

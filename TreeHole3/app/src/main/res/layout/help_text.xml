@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@color/orangeRed"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:tint="@color/white"
+            android:src="@drawable/cancel"
+            android:id="@+id/cancel_button"
+            android:layout_marginLeft="25dp"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"  />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="用户协议"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <ScrollView
+        android:background="@color/backgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_margin="9dp"
+            android:layout_height="wrap_content">
+            <noclay.treehole3.ListViewPackage.ListViewInScrollView
+                android:divider="@null"
+                android:id="@+id/helpTextID"
+                android:paddingBottom="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </noclay.treehole3.ListViewPackage.ListViewInScrollView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

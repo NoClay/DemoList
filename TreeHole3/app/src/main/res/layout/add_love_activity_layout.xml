@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/love_wall_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/return_last_activity_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/cancel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="表白墙"
+            android:textColor="@color/orangeRed"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="To:"
+            android:textColor="@color/orangeRed"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/add_love_to_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/orangeRed"
+            android:hint="表白的对象（不填为匿名）"
+            android:textColor="@color/orangeRed"
+            android:textColorHint="@color/orangeRed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:text="Content:"
+            android:textColor="@color/orangeRed"
+            android:textSize="25sp" />
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:background="@drawable/radius_rectangle_for_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:maxEms="120"
+                android:id="@+id/add_love_content_text"
+                android:padding="12dp"
+                android:layout_alignParentTop="true"
+                android:background="@null"
+                android:lineSpacingExtra="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="大胆说出你的爱(内容必填)"
+                android:textColor="@color/orangeRed"
+                android:textColorHint="@color/orangeRed" />
+            <TextView
+                android:id="@+id/add_love_content_text_listener"
+                android:layout_marginRight="19dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical|right"
+                android:text="还可以编辑100个字"
+                android:textColor="@color/orangeRed"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="From:"
+            android:textColor="@color/orangeRed"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/add_love_from_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orangeRed"
+            android:hint="（不填则为匿名）"
+            android:textColor="@color/orangeRed"
+            android:textColorHint="@color/orangeRed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/add_love_send_button"
+        android:padding="5dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/radius_rectangle_for_text"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+        <Button
+            android:background="@drawable/love_arrow"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textColor="@color/orangeRed"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Send"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

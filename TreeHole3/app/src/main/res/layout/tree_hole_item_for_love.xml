@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@color/backgroundGray"
+        android:weightSum="6"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent">
+            <View
+                android:layout_centerHorizontal="true"
+                android:background="@color/lineGray"
+                android:layout_width="3dp"
+                android:layout_height="match_parent">
+            </View>
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/sort_view_background"
+                android:background="@drawable/next_sort"
+                android:layout_width="50dp"
+                android:layout_height="40dp">
+                <TextView
+                    android:textSize="15sp"
+                    android:id="@+id/sort_view_text"
+                    android:textColor="@color/white"
+                    android:maxLines="1"
+                    android:text="50"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/love_wall_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/love_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/select_background"
+            android:layout_margin="10dp"
+            android:background="@drawable/radius_rectangle_for_love_from_man"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:id="@+id/to_user_name"
+                    android:layout_marginLeft="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical"
+                    android:text="To： 04141163"
+                    android:textColor="@color/orangeRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <RadioButton
+                    android:id="@+id/admire_button"
+                    android:text="0"
+                    android:layout_marginLeft="200dp"
+                    android:layout_centerVertical="true"
+                    style="@style/MyCheckBoxForLove"
+                    android:textColor="@color/orangeRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" />
+            </RelativeLayout>
+
+            <TextView
+                android:textColor="@color/white"
+                android:id="@+id/love_wall_content"
+                android:lineSpacingExtra="3dp"
+                android:textSize="15sp"
+                android:layout_marginTop="-10dp"
+                android:padding="15dp"
+                android:text="@string/test"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/from_user_name"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical|right"
+                android:text="From： 04141163"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/orangeRed"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/from_user_date"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical|right"
+                android:text="2016年11月5日12：53"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/orangeRed"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

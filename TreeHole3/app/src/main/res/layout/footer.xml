@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:id="@+id/love_button_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/love_button_icon"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:src="@drawable/love" />
+
+        <TextView
+            android:id="@+id/love_button_title"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center_horizontal"
+            android:text="树洞表白"
+            android:textColor="@color/lightGray" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/add_button"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:padding="2dp"
+        android:src="@drawable/add" />
+
+
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:id="@+id/speak_button"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/speak_button_icon"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:src="@drawable/speak" />
+
+        <TextView
+            android:id="@+id/speak_button_title"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="center_horizontal"
+            android:text="树洞吐槽"
+            android:textColor="@color/lightGray" />
+    </LinearLayout>
+</RelativeLayout>
