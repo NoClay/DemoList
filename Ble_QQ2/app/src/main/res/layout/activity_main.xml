@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/open_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openBluetooth"
+        android:text="打开蓝牙" />
+
+    <Button
+        android:id="@+id/close_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="closeBluetooth"
+        android:text="关闭蓝牙" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Client"
+        android:text="客户端" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Service"
+        android:text="服务端" />
+
+</LinearLayout>

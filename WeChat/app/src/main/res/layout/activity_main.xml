@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray"
+    android:id="@+id/main_layout"
+    tools:context="noclay.wechat.MainActivity">
+
+    <TextView
+        android:id="@+id/topButton"
+        android:background="@color/darkGray"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Hello World!" />
+
+    <ListView
+        android:divider="@null"
+        android:id="@+id/msgListView"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:gravity="right"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_weight="8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:background="@color/darkGray"
+            android:id="@+id/send"
+            android:layout_weight="2"
+            android:layout_width="75dp"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/add"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
