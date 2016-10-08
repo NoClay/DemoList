@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private BluetoothDeviceAdapter bluetoothDeviceAdapter;
     private ListViewAdapter adapter;
     ConnectedThread connectedThread;
+    SelectBluetoothDevice selectWindow;
 
     //蓝牙设备的变量
     BluetoothAdapter bluetoothAdapter;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     static final int MSG_CONNECT_SUCCESS = 1;
     static final int MSG_START_CONNECT = 2;
     static final int MSG_READ_STRING = 3;
+    static final int MSG_CONNECT_FAILED = 4;
     static final String TAG = "MainActivity";
 
     @Override
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 bluetoothDeviceList.clear();
                 bluetoothDeviceAdapter = new BluetoothDeviceAdapter(MainActivity.this,
                         R.layout.show_bluetooth_item, bluetoothDeviceList);
-                new SelectBluetoothDevice(MainActivity.this,
+                selectWindow = new SelectBluetoothDevice(MainActivity.this,
                         new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -153,11 +155,10 @@ public class MainActivity extends AppCompatActivity {
                                 /**
                                  * 主动连接
                                  */
-                                connectBluetoothDevice(message.getName(),
-                                        message.getAddress());
-
+                                connectBluetoothDevice(message.getName(), message.getAddress());
                             }
-                        }, bluetoothDeviceAdapter).showAtLocation(findViewById(R.id.main_layout),
+                        }, bluetoothDeviceAdapter);
+                selectWindow.showAtLocation(findViewById(R.id.main_layout),
                         Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
             }
         });
@@ -221,9 +222,24 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }else{
                         try {
+                            Log.d(TAG, "run: isConnected" + bluetoothSocket.isConnected());
+
                             bluetoothSocket.connect();
-                            connectedThread = new ConnectedThread(bluetoothSocket);
-                            connectedThread.start();
+                            Log.d(TAG, "run: isConnected" + bluetoothSocket.isConnected());
+                            if(bluetoothSocket.isConnected()){
+                                Message message = new Message();
+                                message.what = MSG_CONNECT_SUCCESS;
+                                message.obj = bluetoothSocket.getRemoteDevice();
+                                handler.sendMessage(message);
+                                connectedThread = new ConnectedThread(bluetoothSocket);
+                                connectedThread.start();
+                            }else{
+                                Message message = new Message();
+                                message.what = MSG_CONNECT_FAILED;
+                                handler.sendMessage(message);
+                            }
+
+
                         } catch (IOException e) {
                             Log.e(TAG, "run: ", e);
                             e.printStackTrace();
@@ -323,6 +339,11 @@ public class MainActivity extends AppCompatActivity {
                     connectedThread.start();
                     Message message = new Message();
                     message.what = MSG_CONNECT_SUCCESS;
+                    message.obj = bluetoothSocket1.getRemoteDevice();
+                    handler.sendMessage(message);
+                }else{
+                    Message message = new Message();
+                    message.what = MSG_CONNECT_FAILED;
                     handler.sendMessage(message);
                 }
             }
@@ -502,7 +523,13 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_CONNECT_SUCCESS:{
+                    if(selectWindow != null){
+                        selectWindow.dismiss();
+                        selectWindow = null;
+                    }
                     toToast("连接成功");
+                    BluetoothDevice device = (BluetoothDevice) msg.obj;
+                    topButton.setText(device.getName() + " " + device.getAddress());
                     break;
                 }
                 case MSG_START_CONNECT:{
@@ -512,6 +539,11 @@ public class MainActivity extends AppCompatActivity {
                 case MSG_WAIT_CONNECT:{
                     toToast("等待连接");
                     break;
+                }
+                case MSG_CONNECT_FAILED:{
+                    selectWindow.dismiss();
+                    toToast("连接失败，请重试");
+                    topButton.setText("Hello World!");
                 }
                 case MSG_READ_STRING:{
 
