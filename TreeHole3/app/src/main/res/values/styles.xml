@@ -8,12 +8,7 @@
         <item name="colorPrimaryDark">@color/orangeRed</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!--自定义的点赞按钮-->
-    <style name="MyCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/my_checkbox_drawable</item>
-        <item name="android:paddingLeft">5dip</item>
-        <item name="android:maxHeight">10.0dip</item>
-    </style>
+
     <!--自定义的匿名-->
     <style name="MyCheckBoxForAnyOne" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:button">@drawable/my_checkbox_drawable_for_anyone</item>
