@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:layout_alignParentTop="true"
-    android:background="@color/orangeRed">
+    android:background="@color/mainBackground">
 
     <noclay.treehole3.OtherPackage.MyCircleImageView
         android:id="@+id/toggle_menu"

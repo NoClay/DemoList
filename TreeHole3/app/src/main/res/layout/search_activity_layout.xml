@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/orangeRed">
+        android:background="@color/mainBackground">
 
         <ImageView
             android:id="@+id/cancel_button"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Xiu love"
-            android:textColor="@color/orangeRed"
+            android:textColor="@color/mainBackground"
             android:textSize="31sp" />
 
         <LinearLayout
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="被表白者"
-                android:textColor="@color/orangeRed" />
+                android:textColor="@color/mainBackground" />
 
             <CheckBox
                 android:id="@+id/checkbox2"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="表白发布者"
-                android:textColor="@color/orangeRed" />
+                android:textColor="@color/mainBackground" />
 
             <CheckBox
                 android:id="@+id/checkbox3"
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="表白内容包含"
-                android:textColor="@color/orangeRed" />
+                android:textColor="@color/mainBackground" />
         </LinearLayout>
     </LinearLayout>
 

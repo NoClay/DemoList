@@ -10,7 +10,7 @@
     <noclay.treehole3.Menu.SlidingMenu
         app:rightPadding="100dp"
         android:scrollbars="none"
-        android:background="@drawable/background1"
+        android:background="#33A6B8"
         android:id="@+id/main_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

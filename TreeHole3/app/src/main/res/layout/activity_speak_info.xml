@@ -8,7 +8,7 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/orangeRed">
+        android:background="@color/mainBackground">
 
         <ImageView
             android:id="@+id/return_last_activity_button"

@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
-        android:background="@color/orangeRed"
+        android:background="@color/mainBackground"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
@@ -206,7 +206,7 @@
                 android:id="@+id/completeSign"
                 android:text="完成注册"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/orangeRed"
+                android:backgroundTint="@color/mainBackground"
                 android:layout_marginTop="3dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/circle_button_bg01"

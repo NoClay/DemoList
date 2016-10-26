@@ -17,10 +17,11 @@
             android:layout_marginLeft="15dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/search"
+            android:tint="@color/mainBackground"
             android:layout_width="25dp"
             android:layout_height="17dp" />
         <TextView
-            android:textColor="@color/orangeRed"
+            android:textColor="@color/mainBackground"
             android:gravity="center"
             android:layout_gravity="center"
             android:text="搜索与我相关"

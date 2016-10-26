@@ -6,6 +6,8 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="orangeRed">#EB4F38</color>
+    <color name="textBackground1">#E16B8C</color>
+    <color name="mainBackground">#78C2C4</color>
     <color name="lightGray">#a9b7b7</color>
     <color name="lightWhite">#F2E5E5</color>
     <color name="skyBlue">#56ABE4</color>

@@ -13,7 +13,7 @@
             android:id="@+id/comment_author_name"
             android:textSize="15sp"
             android:layout_alignParentLeft="true"
-            android:textColor="@color/orangeRed"
+            android:textColor="@color/mainBackground"
             android:text="好的"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

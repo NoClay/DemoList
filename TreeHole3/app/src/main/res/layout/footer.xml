@@ -39,6 +39,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="1dp"
         android:padding="2dp"
+        android:tint="@color/mainBackground"
         android:src="@drawable/add" />
 
 
@@ -55,7 +56,7 @@
         <ImageView
             android:id="@+id/speak_button_icon"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="22dp"
             android:src="@drawable/speak" />
 
         <TextView

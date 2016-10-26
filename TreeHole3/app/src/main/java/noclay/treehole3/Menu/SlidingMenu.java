@@ -3,6 +3,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import com.nineoldandroids.view.ViewHelper;
 
 import noclay.treehole3.R;
 
+import static cn.bmob.v3.BmobRealTimeData.TAG;
+
 public class SlidingMenu extends HorizontalScrollView
 {
     private LinearLayout mWapper;//包含菜单视图和内容视图的HorizontalScrollView
@@ -24,6 +27,10 @@ public class SlidingMenu extends HorizontalScrollView
     private int mMenuRightPadding = 50;//菜单弹出后距离右侧的距离，单位为dp
     private boolean once;//将初始化大小的OnMeasure()中的初始化菜单和内容的大小的代码段设置为执行一次
     private boolean isOpen;//描述菜单的打开状态
+
+    
+    private int lastX;
+    private int lastY;
 
     public boolean isOpen() {
         return isOpen;
@@ -115,6 +122,20 @@ public class SlidingMenu extends HorizontalScrollView
         }
     }
 
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:{
+                lastX = (int) ev.getX();
+                lastY = (int) ev.getY();
+
+                break;
+            }
+        }
+        return super.onInterceptTouchEvent(ev);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent ev)
     {
@@ -123,15 +144,32 @@ public class SlidingMenu extends HorizontalScrollView
         {
             case MotionEvent.ACTION_UP:
                 // 隐藏在左边的宽度
-                int scrollX = getScrollX();
-                if (scrollX >= mMenuWidth / 2)//大于菜单的一半，隐藏
-                {
-                    this.smoothScrollTo(mMenuWidth, 0);
-                    isOpen = false;
-                } else
-                {
-                    this.smoothScrollTo(0, 0);
-                    isOpen = true;
+//                int scrollX = getScrollX();
+//                Log.d(TAG, "onTouchEvent: scrollX" + scrollX);
+//                Log.d(TAG, "onTouchEvent: menuWidth" + mMenuWidth);
+//                Log.d(TAG, "onTouchEvent: touch" + mMenuWidth / 16);
+
+//                if (scrollX >= mMenuWidth / 2)//大于菜单的一半，隐藏
+//                {
+//                    this.smoothScrollTo(mMenuWidth, 0);
+//                    isOpen = false;
+//                } else
+//                {
+//                    this.smoothScrollTo(0, 0);
+//                    isOpen = true;
+//                }
+
+                if(Math.abs(ev.getX() - lastX) >= Math.abs(ev.getY() - lastY)){
+                    if(!isOpen && (ev.getX() - lastX) >= 100){
+                        //向右滑动操作
+                        this.smoothScrollTo(0, 0);
+                        isOpen = true;
+
+                    }
+                    if(isOpen && (lastX - ev.getX()) >= 100){
+                        this.smoothScrollTo(mMenuWidth, 0);
+                        isOpen = false;
+                    }
                 }
                 return true;
         }
@@ -190,7 +228,7 @@ public class SlidingMenu extends HorizontalScrollView
          *
          */
         float rightScale = 0.7f + 0.3f * scale;
-        float leftScale = 1.0f - scale * 0.3f;
+        float leftScale = 1.0f - 0.3f * scale;
         float leftAlpha = 0.6f + 0.4f * (1 - scale);
 
         // 调用属性动画，设置TranslationX
@@ -200,10 +238,10 @@ public class SlidingMenu extends HorizontalScrollView
         ViewHelper.setScaleY(mMenu, leftScale);
         ViewHelper.setAlpha(mMenu, leftAlpha);
         // 设置content的缩放的中心点
-        ViewHelper.setPivotX(mContent, 0);
-        ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
-        ViewHelper.setScaleX(mContent, rightScale);
-        ViewHelper.setScaleY(mContent, rightScale);
+//        ViewHelper.setPivotX(mContent, 0);
+//        ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
+//        ViewHelper.setScaleX(mContent, rightScale);
+//        ViewHelper.setScaleY(mContent, rightScale);
 
     }
 

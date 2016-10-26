@@ -1,7 +1,5 @@
 package noclay.treehole3;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
@@ -19,12 +17,9 @@ import android.provider.MediaStore;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -105,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                         slidingMenu.toggle();
                         break;
                     case R.id.toggle_theme:
-                        setToggleTheme(true);
+//                        setToggleTheme(true);
                         break;
                     case R.id.love_button_layout:
                         setFooterTheme(1);
@@ -317,13 +312,13 @@ public class MainActivity extends AppCompatActivity {
         switch (curNumber) {
             case 1: {
                 loveButtonIcon.setImageDrawable(this.getResources().getDrawable(R.drawable.love_up));
-                loveButtonTitle.setTextColor(getResources().getColor(R.color.orangeRed));
+                loveButtonTitle.setTextColor(getResources().getColor(R.color.mainBackground));
                 setSelectFragment(1);
                 break;
             }
             case 3: {
                 speakButtonIcon.setImageDrawable(getResources().getDrawable(R.drawable.speak1));
-                speakButtonTitle.setTextColor(getResources().getColor(R.color.orangeRed));
+                speakButtonTitle.setTextColor(getResources().getColor(R.color.mainBackground));
                 setSelectFragment(2);
                 break;
             }
@@ -381,7 +376,6 @@ public class MainActivity extends AppCompatActivity {
         myTreeHoleForLove = (RelativeLayout) findViewById(R.id.my_love_wall);
         nowUserImage = (MyCircleImageView) findViewById(R.id.userImage);
         nowUserName = (TextView) findViewById(R.id.userName);
-        setToggleTheme(false);
         fragmentManager = getFragmentManager();
         setFooterTheme(1);
         //存储头像所在的目录
@@ -403,6 +397,11 @@ public class MainActivity extends AppCompatActivity {
         localBroadcastManager.unregisterReceiver(localReceiver);
     }
 
+    /**
+     * 切换主题的方法
+     * 已经废弃
+     * @param type
+     */
     private void setToggleTheme(boolean type) {
         SharedPreferences sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
         int nowThemeCur = sharedPreferences.getInt("nowThemeCur", 1);
